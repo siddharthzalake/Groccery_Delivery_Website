@@ -10,6 +10,7 @@ import productRouter from "./routes/productRoutes.js";
 import cartRouter from "./routes/cartRoute.js";
 import addressRouter from "./routes/addressRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import { stripeWebHooks } from "./controller/orderController.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -20,8 +21,11 @@ await connectCloudinary();
 // Allowed origins
 const allowedOrigins = ["http://localhost:5173"];
 
-// ❌ DO NOT put Stripe webhook here
-// ❌ DO NOT use express.raw() here
+app.post(
+  "/api/order/stripe/webhook",
+  express.raw({ type: "application/json" }),
+  stripeWebHooks
+);
 
 // Normal middleware (safe)
 app.use(express.json());

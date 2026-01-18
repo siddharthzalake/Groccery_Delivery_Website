@@ -20,7 +20,5 @@ orderRouter.get("/user", authUser, getUserOrders);
 // SELLER ROUTES
 orderRouter.get("/seller", authSeller, getAllOrders);
 
-// STRIPE WEBHOOK (❗ NO AUTH ❗)
-orderRouter.post("/stripe/webhook", stripeWebHooks);
 
 export default orderRouter;
