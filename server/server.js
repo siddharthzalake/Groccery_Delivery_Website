@@ -19,7 +19,7 @@ await connectDB();
 await connectCloudinary();
 
 // Allowed origins
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = ["http://localhost:5173",'https://groccery-delivery-website.vercel.app'];
 
 app.post(
   "/api/order/stripe/webhook",
