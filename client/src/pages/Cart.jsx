@@ -100,9 +100,6 @@ const Cart = () => {
     toast.error(error.message);
   }
 };
-
-
-
     
     useEffect(()=>{
        if(products.length >0 && cartItems){

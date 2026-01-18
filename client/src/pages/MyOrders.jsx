@@ -36,7 +36,7 @@ const MyOrders = () => {
                     <span>Total Amount : {currency}{order.amount}</span>
                 </p>
                 {order.items.map((item,index)=>(
-                    <div className={`relative bg-white text-gray-500/70 
+                    <div key={index} className={`relative bg-white text-gray-500/70 
                     ${order.items.length !== index + 1 && "border-b"} border-gray-300 flex flex-col 
                     md:flex-row md:items-center justify-between p-4 py-5 md:gap-16 w-full max-w-4xl`}>
                         <div className='flex items-center mb-4 md:mb-0'>
